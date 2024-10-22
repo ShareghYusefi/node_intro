@@ -28,11 +28,18 @@ console.log(`Total Memory: ${totalMemory}`);
 
 // We can use the require() function to include a module in our project
 var http = require("http");
+// import log function from logger.js
+// ./fileName: this means current folder
+// ../fileName: this is moving up one folder
+// /fileName: this is moving to the root folder
+const log = require("./logger");
 
 http
   .createServer(
     // take a callback function as an argument, this callback function will have acces to the request and response objects
     function (req, res) {
+      // log the request
+      log("Request logged into database");
       // write response for the client
       res.writeHead(200, { "Content-Type": "application/json" }); // write the response header
       res.write('{ "message": "Hello World!" }'); // write the response body
