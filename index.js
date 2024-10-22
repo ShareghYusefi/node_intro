@@ -58,3 +58,14 @@ http
 // We can install third-party modules using npm
 // Step 1 - npm init
 // Step 2 - npm install <package-name>
+
+// npm install - will create a node_modules folder and install dependencies in that folder
+// npm uninstall - will remove the package from the node_modules & pacakge.json folder
+// npm install -g <package-name> - will install the package globally
+// npm -g list - will list all the global packages installed
+// npm update - will update all the packages to the latest version
+
+// Semantic Versioning
+// Major.Minor.Patch
+// Caret (^) - allows minor and patch updates
+// Tilde (~) - allows only patch updates
