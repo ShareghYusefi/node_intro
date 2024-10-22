@@ -32,14 +32,21 @@ var http = require("http");
 // ./fileName: this means current folder
 // ../fileName: this is moving up one folder
 // /fileName: this is moving to the root folder
-const log = require("./logger");
+// We import the class definition from logger.js
+const logger = require("./logger");
+// create an instance of the Logger class
+const LoggerInstance = new logger();
+
+LoggerInstance.on("messageLogged", (argument) => {
+  console.log("Listener called", argument);
+});
 
 http
   .createServer(
     // take a callback function as an argument, this callback function will have acces to the request and response objects
     function (req, res) {
       // log the request
-      log("Request logged into database");
+      LoggerInstance.log("Request received");
       // write response for the client
       res.writeHead(200, { "Content-Type": "application/json" }); // write the response header
       res.write('{ "message": "Hello World!" }'); // write the response body
