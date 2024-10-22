@@ -40,3 +40,7 @@ http
   )
   .listen(8080); // listen for requests on port 8080 of the server
 // ports are like doors that allow us to communicate with the server
+
+// We can install third-party modules using npm
+// Step 1 - npm init
+// Step 2 - npm install <package-name>
